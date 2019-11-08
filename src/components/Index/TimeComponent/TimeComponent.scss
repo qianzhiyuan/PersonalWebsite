@@ -1,0 +1,27 @@
+.times-container {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  color: #fff;
+  font-weight: 100;
+  vertical-align: top;
+  z-index: 5;
+  span {
+    display: inline-block;
+    width: 50px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 40px;
+  }
+  .times-colon {
+    width: auto;
+  }
+  .day-ctx {
+    margin-top: 5px;
+    padding-left: 5px;
+    span {
+      font-size: 15px;
+      line-height: 15px;
+    }
+  }
+}
