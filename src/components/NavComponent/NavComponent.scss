@@ -1,0 +1,36 @@
+.nav-container {
+  position: fixed;
+  padding-left: 5%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Poppins",Arial,Tahoma,sans-serif;
+  transition: all .3s ease-in-out;
+  line-height: 70px;
+  z-index: 3;
+  .nav-item {
+    float: left;
+    width: 80px;
+    text-align: center;
+    span {
+      &:hover {
+        cursor: pointer;
+        font-size: 16px;
+        transition: all .5s ease-in-out;
+      }
+    }
+  }
+
+  &.middle-top {
+    width: 80%;
+    left: 10%;
+    background: -webkit-linear-gradient(left, rgba(224, 40, 171, 0.4), rgba(70, 193, 255, 0.4) 100%);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
