@@ -29,7 +29,8 @@ function TimeComponent() {
       <span>${hour}</span><span class="times-colon">:</span><span>${minute}</span><span class="times-colon">:</span><span>${second}</span>
       </div>
       <div class="day-ctx">
-      	<span>${weekDay}</span><span>${dayStr}</span>
+      	<span>${weekDay}</span>
+      	<span>${dayStr}</span>
 			</div>	
 		`
 	}

@@ -5,6 +5,7 @@ import TimeComponent from '../../components/Index/TimeComponent/TimeComponent';
 import NavComponent from '../../components/NavComponent/NavComponent';
 import LeftAsideComponent from '../../components/Index/LeftAsideComponent/LeftAsideComponent';
 import MiddleSectionComponent from '../../components/Index/MiddleSectionComponent/MiddleSectionComponent';
+import RightAsideComponent from '../../components/Index/RightAsideComponent/RightAsideComponent';
 
 class Index extends React.Component{
   render() {
@@ -15,6 +16,7 @@ class Index extends React.Component{
         <BannerComponent/>
         <section className="section-container clearfix">
           <LeftAsideComponent/>
+          <RightAsideComponent/>
           <MiddleSectionComponent/>
         </section>
       </div>

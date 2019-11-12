@@ -12,6 +12,9 @@ class NavComponent extends React.Component {
     window.onscroll = () => {
       this.setNavTheme()
     }
+    window.onresize = () => {
+      this.setNavTheme()
+    }
   }
 
   setNavTheme() {
