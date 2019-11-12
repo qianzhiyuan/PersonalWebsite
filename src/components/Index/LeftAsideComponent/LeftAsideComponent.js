@@ -6,7 +6,15 @@ class LeftAsideComponent extends React.Component{
   render() {
     return (
       <div className="left-aside-container">
-        <RankListComponent/>
+        <div className="left-aside-list">
+          <RankListComponent/>
+        </div>
+        <div className="left-aside-list">
+          <RankListComponent/>
+        </div>
+        <div className="left-aside-list">
+          <RankListComponent/>
+        </div>
       </div>
     )
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './NavComponent.scss'
 import Config from '../../assets/js/config';
-import Axios from 'axios'
 
 class NavComponent extends React.Component {
   state = {

@@ -13,7 +13,7 @@ class App extends React.Component {
 
   changeMargin() {
     // 获取网页可见区域宽度
-    let docWidth = document.clientWidth;
+    let docWidth = document.body.clientWidth;
     let docHeight = document.body.clientHeight;
     Config.fullscreenWidth = docWidth
     Config.fullscreenHeight = docHeight
