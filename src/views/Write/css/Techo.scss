@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+/* techo-typora style */
+.Techo {
+  width: 100%;
+  padding-top: 2em;
+  padding-left: 60px;
+  padding-right: 60px;
+  min-height: calc(100vh - 6em);
+  background: #f9f5ed;
+  font-family: "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+
+  --active-file-bg-color: #dadada;
+  --active-file-bg-color: rgba(32, 43, 51, 0.63);
+  --active-file-text-color: white;
+  --bg-color: #f9f5ed;
+  --text-color: #6e4832;
+  --side-bar-bg-color: #f5f5f5;
+  --control-text-color: #666;
+  --primary-color: #6e4832;
+
+  /* clear margin and padding */
+  dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    margin: 0;
+    padding: 0;
+  }
+
+  article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+    display: block;
+  }
+
+  audio, canvas, video {
+    display: inline-block;
+  }
+
+  button, input, select, textarea {
+    font: 400 1em/1.8 "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+  }
+
+  /* 段落之间的间隔 */
+  p, .md-fences, ul, ol, dl, form, hr, figure,
+  #write-p, pre, #write-ul, #write-ol, #write-dl, #write-form, #write-hr, table, blockquote {
+    margin-bottom: 1.2em
+  }
+
+  #write h1, #write h2, #write h3, #write h4, #write h5, #write h6,
+  #write-h1, #write-h2, #write-h3, #write-h4, #write-h5, #write-h6 {
+    margin-bottom: 0.6em;
+    line-height: 1.35;
+    color: #6e4832;
+    font-weight: bolder;
+  }
+
+  h1, #write-h1 {
+    font-size: 2.4em;
+    padding-bottom: 0.3em;
+    border-bottom: 3px double #eee;
+  }
+
+  h2, #write-h2 {
+    font-size: 1.8em;
+  }
+
+  h3, #write-h3 {
+    font-size: 1.6em;
+  }
+
+  h4, #write-h4 {
+    font-size: 1.4em;
+  }
+
+  #write h5, #write h6, #write-h5, #write-h6 {
+    font-size: 1.2em;
+  }
+
+  /* 在文章中的 ul 和 ol 的样式 */
+  ul, #write-ul {
+    margin-left: 1.3em;
+    list-style: disc;
+  }
+
+  ol, #write-ol {
+    list-style: decimal;
+    margin-left: 1.9em;
+  }
+
+  li ul, li ol, #write-ul ul, #write-ul ol, #write-ol ul, #write-ol ol {
+    margin-bottom: 0.8em;
+    margin-left: 2em;
+  }
+
+  li ul, #write-ul ul, #write-ol ul {
+    list-style: circle;
+  }
+
+  table th, #write-table th {
+    background: #fbfbfb;
+  }
+
+  table thead th, #write-table thead th {
+    background: rgba(251, 240, 211, 0.76);
+  }
+
+  table caption {
+    border-bottom: none;
+  }
+
+  em {
+    font-weight: inherit;
+    font-style: inherit;
+  }
+
+  li > p {
+    margin-bottom: 0 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "font/han.otf", "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;
+    /*font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans;*/
+    -webkit-font-smoothing: initial;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1.35;
+    font-variant-numeric: lining-nums;
+    margin-bottom: 1em;
+  }
+
+  em {
+    font-family: "font/han.otf", Georgia-Italic, STSongti-SC-Light, serif;
+  }
+
+  strong em,
+  em strong {
+    font-family: "font/han.otf", Georgia-BoldItalic, STSongti-SC-Regular, serif;
+  }
+
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  fieldset, img {
+    border: 0;
+  }
+
+  /* img 添加边框 */
+  img {
+    background: white;
+    border-radius: .2rem;
+    padding: 0.3rem;
+    box-shadow: 1px 2px 4px gray;
+    text-align: center;
+  }
+
+  blockquote {
+    position: relative;
+    margin: 1em 3em 1em 1em !important;
+    padding-left: 1rem !important;
+    border-left: 2px solid #6e4832;
+    color: rgba(146, 115, 91, 0.81);
+    font-weight: 400;
+  }
+
+  acronym, abbr {
+    border-bottom: 1px dotted;
+    font-variant: normal;
+  }
+
+  abbr {
+    cursor: help;
+  }
+
+  address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  caption, th {
+    text-align: left;
+  }
+
+  q:before, q:after {
+    content: '';
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+  }
+
+  :root sub, :root sup {
+    vertical-align: baseline; /* for ie9 and other modern browsers */
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  /* a border bottom styles */
+  a {
+    color: #4484c2;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a {
+    font-weight: normal;
+  }
+
+  a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #4484c2;
+  }
+
+  ins, a {
+    text-decoration: none;
+  }
+
+  /* mark */
+  mark {
+    background: #fffdd1;
+    border-bottom: 1px solid #ffedce;
+    padding: 2px;
+    margin: 0 5px;
+  }
+
+  pre, code, pre tt {
+    font-family: Courier, 'Courier New', monospace;
+  }
+
+  .md-fences {
+    border: 1px solid #ddd;
+    padding: 1em 0.5em;
+    display: block;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid #cfcfcf;
+    margin-bottom: 0.8em;
+    height: 10px;
+  }
+
+  strong, b {
+    font-weight: 700;
+    /*color: #000;*/
+  }
+
+  /* Responsive images */
+  img {
+    max-width: 100%;
+  }
+
+  a.md-toc-inner {
+    border-bottom: 0 !important;
+  }
+
+  .md-toc-h1:first-of-type:last-of-type {
+    display: none;
+  }
+
+  .md-toc {
+    font-size: inherit;
+  }
+
+  .md-toc-h1 .md-toc-inner {
+    font-weight: normal;
+  }
+
+  .md-table-edit th {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .typora-quick-open-item.active {
+    color: var(--active-file-text-color);
+  }
+
+  *.in-text-selection, ::selection {
+    background: var(--active-file-bg-color);
+    text-shadow: none;
+    color: white;
+  }
+
+  .btn-primary {
+    background-color: #2d2d2d;
+    border-color: #020202;
+  }
+
+  .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background-color: #4e4c4e;
+    border: #4e4c4e;
+  }
+
+  #preference-dialog .modal-content {
+    background: #6e757a;
+    --bg-color: #6e757a;
+    --text-color: #f1f1f1;
+    color: #f1f1f1;
+  }
+
+  /* 角标颜色 */
+  sup.md-footnote {
+    color: #6e4832;
+  }
+
+  .task-list {
+    list-style: none !important;
+  }
+
+  /* checked box 效果 */
+  .task-list-item input {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    -webkit-appearance: initial;
+    left: -18px;
+  }
+
+  .task-list-item input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .task-list-item input:before {
+    border: 2px solid #6e4832;
+    border-radius: 1.2rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    content: ' ';
+    transition: background-color 200ms ease-in-out;
+    display: block;
+  }
+
+  .task-list-item input:checked:before,
+  .task-list-item input[checked]:before {
+    -webkit-appearance: initial;
+    background: #6e4832;
+    border-width: 2px;
+    display: inline-block;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  .task-list-item input:checked:after,
+  .task-list-item input[checked]:after {
+    opacity: 1;
+  }
+
+  .task-list-item input:after {
+    opacity: 1;
+    -webkit-transition: opacity 0.05s ease-in-out;
+    -moz-transition: opacity 0.05s ease-in-out;
+    transition: opacity 0.05s ease-in-out;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0.325rem;
+    left: 0.28125rem;
+    width: 0.6375rem;
+    height: 0.4rem;
+    border: 3px solid #f9f5ed;
+    border-top: 0;
+    border-right: 0;
+    content: ' ';
+    opacity: 0;
+  }
+
+  .task-list-done {
+    text-decoration: line-through;
+  }
+
+  .md-grid-board a:hover,
+  .md-grid-board a.md-active {
+    border-color: #a1a1a1;
+    background: #f9edc5;
+  }
+
+  .md-grid-board tr[row='1'] a:hover,
+  .md-grid-board tr[row='1'] a.md-active {
+    background: #5e3e2b;
+  }
+
+  /* meta - message - block */
+  pre.md-meta-block {
+    color: rgba(146, 115, 91, 0.81);
+    padding: 1em;
+    border-radius: 2px;
+    font-size: 14px;
+    background: rgba(251, 246, 222, 0.5);
+  }
+
+  /* table */
+
+  table {
+    width: 100%;
+
+    th, td {
+      padding: 0.5em 1em;
+      border: 1px solid #ddd;
+      color: rgba(110, 72, 50, 0.74);
+    }
+  }
+}
+

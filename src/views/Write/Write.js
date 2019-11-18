@@ -3,6 +3,7 @@ import 'highlight.js/styles/monokai-sublime.css';
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/monokai.css'
 import './Write.scss'
+import './css/Techo.scss'
 import CodeBlock from './CodeBlock'
 import ReactMarkdown from 'react-markdown'
 const toc = require('remark-toc')
@@ -37,11 +38,11 @@ React.render(
 Pretty neat, eh?
 
 ## Tables?
-| Feature   | Support |
-| --------- | ------- |
-| tables    | ✔ |
-| alignment | ✔ |
-| wewt      | ✔ |
+|  Feature  | Support |
+| :-------: | :-----: |
+|  tables   |    ✔    |
+| alignment |    ✔    |
+|   wewt    |    ✔    |
 
 ## More info?
 
@@ -79,7 +80,7 @@ class Write extends React.Component {
 
 				<div className="result-pane">
 					<ReactMarkdown
-						className="result"
+						className="result Techo"
 						source={this.state.markdownSrc}
 						skipHtml={false}
 						escapeHtml={false}
