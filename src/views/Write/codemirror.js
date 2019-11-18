@@ -1,6 +1,9 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const CodeMirrorMode = require('codemirror/mode/markdown/markdown.js')
 const CodeMirror = require('codemirror')
+
+!CodeMirrorMode && console.log(CodeMirrorMode)
 
 // adapted from:
 // https://github.com/facebook/react/blob/master/docs/_js/live_editor.js#L16

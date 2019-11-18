@@ -1,6 +1,6 @@
 import App from "../views/Test/App";
 import Index from "../views/Index/Index";
-import Content from '../views/Content/Content';
+import Write from '../views/Write/Write';
 
 const routeLists = [
   {
@@ -8,8 +8,8 @@ const routeLists = [
     component: Index
   },
   {
-    path: "/content",
-    component: Content
+    path: "/write",
+    component: Write
   },
   {
     path: "/tacos",

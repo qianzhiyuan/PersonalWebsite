@@ -1,16 +1,12 @@
-import 'highlight.js/styles/monokai-sublime.css';
 import React from 'react';
-import ReactMarkdown from 'react-markdown'
-import './Content.scss'
+import 'highlight.js/styles/monokai-sublime.css';
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/monokai.css'
+import './Write.scss'
 import CodeBlock from './CodeBlock'
-import CodeMirrorEditor from './codemirror'
+import ReactMarkdown from 'react-markdown'
 const toc = require('remark-toc')
-const Markdown = require('./with-html')
 const Editor = require('./editor')
-const MarkdownControls = require('./markdown-controls')
-
-console.log(CodeMirrorEditor);
-
 
 const initialSource = `
 # Live demo
@@ -20,7 +16,9 @@ Changes are automatically rendered as you type.
 * Renders actual, "native" React DOM elements
 * Allows you to escape or skip HTML (try toggling the checkboxes above)
 * If you escape or skip the HTML, no \`dangerouslySetInnerHTML\` is used! Yay!
+
 ## HTML block below
+
 <blockquote>
   This blockquote will change based on the HTML settings above.
 </blockquote>
@@ -31,7 +29,7 @@ Changes are automatically rendered as you type.
 var React = require('react');
 var Markdown = require('react-markdown');
 React.render(
-  <Markdown source="# Your markdown here1" />,
+  <Markdown source="# Your markdown here" />,
   document.getElementById('content')
 );
 \`\`\`
@@ -44,13 +42,15 @@ Pretty neat, eh?
 | tables    | ✔ |
 | alignment | ✔ |
 | wewt      | ✔ |
+
 ## More info?
+
 Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)
 ---------------
 A component by [Espen Hovlandsdal](https://espen.codes/)
 `
 
-class Content extends React.Component {
+class Write extends React.Component {
 	constructor(props) {
 		super(props)
 
@@ -74,8 +74,6 @@ class Content extends React.Component {
 		return (
 			<div className="demo">
 				<div className="editor-pane">
-					<MarkdownControls onChange={this.handleControlsChange} mode={this.state.htmlMode} />
-
 					<Editor value={this.state.markdownSrc} onChange={this.handleMarkdownChange} />
 				</div>
 
@@ -83,8 +81,8 @@ class Content extends React.Component {
 					<ReactMarkdown
 						className="result"
 						source={this.state.markdownSrc}
-						skipHtml={this.state.htmlMode === 'skip'}
-						escapeHtml={this.state.htmlMode === 'escape'}
+						skipHtml={false}
+						escapeHtml={false}
 						renderers={{code: CodeBlock}}
 						plugins={[toc]}
 					/>
@@ -94,4 +92,4 @@ class Content extends React.Component {
 	}
 }
 
-export default Content;
+export default Write;

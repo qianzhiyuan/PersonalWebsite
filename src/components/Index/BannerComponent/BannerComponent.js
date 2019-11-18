@@ -7,7 +7,7 @@ class BannerComponent extends React.Component{
   }
 
   render() { // 2345678910111111111
-    let idx = getRandom(1, 12)
+    let idx = getRandom(1, 13)
     let img = require('../../../assets/img/banner/' + idx + '.jpg')
     let style = {
       backgroundImage: 'url('+img+')',
