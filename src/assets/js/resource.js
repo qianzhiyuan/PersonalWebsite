@@ -27,7 +27,7 @@ Axios.interceptors.response.use(function (response) {
 });
 
 function getBaiDuList() {
-  return Axios.get('http://120.78.201.242:80/getbaidulist')
+  return Axios.get('http://120.78.201.242:8888/getbaidulist')
 }
 
 export {
