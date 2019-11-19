@@ -7,8 +7,15 @@ class BannerComponent extends React.Component{
   }
 
   render() { // 2345678910111111111
-    let idx = getRandom(1, 13)
-    let img = require('../../../assets/img/banner/' + idx + '.jpg')
+    const arr = ['SAO', 'Other']
+    const addressStr = arr[getRandom(0, 1)]
+    let idx = -1
+    if (addressStr === 'SAO') {
+      idx = getRandom(1, 40)
+    } else {
+      idx = getRandom(1, 13)
+    }
+    let img = require('../../../assets/img/banner/' + addressStr + '/' + idx + '.jpg')
     let style = {
       backgroundImage: 'url('+img+')',
       backgroundSize: 'cover',
