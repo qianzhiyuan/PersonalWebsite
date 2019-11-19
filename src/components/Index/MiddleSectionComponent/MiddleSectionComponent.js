@@ -7,7 +7,7 @@ class MiddleSectionComponent extends React.Component {
     let commentIcon = require('../../../assets/img/icon/comment-icon.png')
     let eyeIcon = require('../../../assets/img/icon/eyes-icon.png')
     let thumbIcon = require('../../../assets/img/icon/thumbs-icon.png')
-    return <div className="middle-section-container">
+    return <>
       <ul className="scroll-section-list">
         {
           [1, 2, 3, 4, 5].map((item, idx) => {
@@ -49,7 +49,7 @@ class MiddleSectionComponent extends React.Component {
           })
         }
       </ul>
-    </div>
+    </>
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './LeftAsideComponent.scss'
-import RankListComponent from '../RankListComponent/RankListComponent';
+import RankListComponent from "../RankListComponent/RankListComponent";
 
 class LeftAsideComponent extends React.Component{
   render() {

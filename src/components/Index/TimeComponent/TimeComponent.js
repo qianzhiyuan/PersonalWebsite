@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Moment} from '../../../assets/js/moment'
 import './TimeComponent.scss'
 
-function TimeComponent() {
+function TimeComponent(props) {
 	let moment = Moment()
 	// console.log(moment);
 	const [timeJson, setTimJson] = useState({
@@ -36,7 +36,8 @@ function TimeComponent() {
 	}
 
 	return (
-		<div className="times-container" dangerouslySetInnerHTML={{__html: createHtml(timeJson)}}>
+		<div className={`times-container ${props.isMin ? 'min-times-container' : ''}`}
+		     dangerouslySetInnerHTML={{__html: createHtml(timeJson)}}>
 		</div>
 	);
 }

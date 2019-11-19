@@ -1,29 +1,63 @@
 .times-container {
-  position: fixed;
+  position: absolute;
+  width: 180px;
   top: 30px;
   right: 50px;
   color: #fff;
   font-weight: 100;
+  font-family: "not specified";
   vertical-align: top;
   z-index: 5;
-  span {
-    display: inline-block;
-    width: 50px;
-    font-size: 50px;
-    text-align: center;
+
+  .times-ctx {
     line-height: 40px;
+
+    span {
+      display: inline-block;
+      width: 50px;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    .times-colon {
+      width: auto;
+    }
   }
-  .times-colon {
-    width: auto;
-  }
+
   .day-ctx {
     margin-top: 5px;
     padding-left: 5px;
+    line-height: 15px;
+
     span {
       display: inline-block;
       min-width: 80px;
       font-size: 15px;
-      line-height: 15px;
+    }
+  }
+
+  &.min-times-container {
+    top: 20px;
+
+    .times-ctx {
+      line-height: 20px;
+
+      span {
+        font-size: 30px;
+      }
+
+      .times-colon {
+        width: auto;
+      }
+    }
+
+    .day-ctx {
+      padding-left: 10px;
+      line-height: 0;
+
+      span {
+        font-size: 10px;
+      }
     }
   }
 }

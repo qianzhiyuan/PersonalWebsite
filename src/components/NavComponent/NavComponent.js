@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavComponent.scss'
 import Config from '../../assets/js/config';
+import TimeComponent from "../Index/TimeComponent/TimeComponent";
 
 class NavComponent extends React.Component {
   state = {
@@ -44,6 +45,10 @@ class NavComponent extends React.Component {
         <p className="nav-item">
           <span>Test</span>
         </p>
+
+        <div className="time-absolute">
+          <TimeComponent isMin={theme === 'scroll'}/>
+        </div>
       </div>
     )
   }
