@@ -11,7 +11,7 @@ class BannerComponent extends React.Component{
     const addressStr = arr[getRandom(0, 1)]
     let idx = -1
     if (addressStr === 'SAO') {
-      idx = getRandom(1, 40)
+      idx = getRandom(1, 41)
     } else {
       idx = getRandom(1, 13)
     }
