@@ -1,3 +1,5 @@
+import lunar7 from "./lunar7";
+
 /**
  *
  * @param min
@@ -28,7 +30,14 @@ function changeTimes(times) {
   return str
 }
 
+// 获取时间对应的农历
+function getDateTimeData(timeStr) {
+  let str = lunar7.getTimeData(timeStr)
+  console.log(str);
+}
+
 export {
   getRandom,
-  changeTimes
+  changeTimes,
+  getDateTimeData
 }
