@@ -15,7 +15,7 @@ class RankListComponent extends React.Component {
   getData() {
     getBaiDuList().then(res => {
       if (res.code === 200) {
-        console.log(res.data);
+        // console.log(res.data);
         this.setState({
           list: res.data
         })

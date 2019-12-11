@@ -31,13 +31,21 @@ function changeTimes(times) {
 }
 
 // 获取时间对应的农历
-function getDateTimeData(timeStr) {
+function getDateTimeDataLunar(timeStr) {
   let str = lunar7.getTimeData(timeStr)
-  console.log(str);
+  // console.log(str);
+  return str
+}
+
+// 根据年月获取当月的天数
+function mGetDate(year, month) {
+  var d = new Date(year, month, 0)
+  return d.getDate()
 }
 
 export {
   getRandom,
   changeTimes,
-  getDateTimeData
+  getDateTimeDataLunar,
+  mGetDate
 }
