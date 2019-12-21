@@ -1,11 +1,30 @@
 .calendar-container {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 10px 10px 0;
   display: block;
   width: 410px;
-  height: 370px;
+  height: 410px;
   border: 2px solid #57abff;
   font-size: 18px;
+
+  .calendar-operate {
+    .operate-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 2%;
+      min-width: 20%;
+      height: 25px;
+      border: 1px solid #57abff;
+      border-radius: 6px;
+      font-size: 16px;
+
+      img {
+        margin: 0 15px;
+        width: 25px;
+      }
+    }
+  }
 
   .calendar-title {
     width: 100%;
@@ -32,6 +51,31 @@
       border-top: 1px solid #55aaff;
       text-align: center;
       //line-height: 55px;
+
+      &.calendar-week-day {
+        color: #e02d2d;
+
+        .calendar-festival-desc {
+          color: #999;
+        }
+      }
+
+      &.calendar-gray {
+        color: #bfbfbf;
+
+        .calendar-festival-desc {
+          color: #bfbfbf !important;
+        }
+      }
+
+      &.calendar-now {
+        background: #fb0;
+        color: #fff;
+
+        .calendar-festival-desc {
+          color: #fff !important;
+        }
+      }
     }
 
     .calendar-festival-desc {
