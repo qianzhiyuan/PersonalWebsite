@@ -1,4 +1,5 @@
 import lunar7 from "./lunar7";
+import quotationList from './quotationList'
 
 /**
  *
@@ -43,9 +44,15 @@ function mGetDate(year, month) {
   return d.getDate()
 }
 
+// 经典语录
+function quotationsList() {
+  return quotationList.quotationList
+}
+
 export {
   getRandom,
   changeTimes,
   getDateTimeDataLunar,
-  mGetDate
+  mGetDate,
+  quotationsList
 }

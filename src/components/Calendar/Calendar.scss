@@ -76,6 +76,11 @@
           color: #fff !important;
         }
       }
+
+      &:hover {
+        border: 3px solid #fb0;
+        cursor: pointer;
+      }
     }
 
     .calendar-festival-desc {

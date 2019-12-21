@@ -107,9 +107,12 @@ class Calendar extends React.Component {
         returnText = obj.festival()[0].value
         style.color = '#e02d2d'
       }
-      return <p className="calendar-festival-desc" style={style}>
-        {returnText}
-      </p>;
+      return {
+      	dom: <p className="calendar-festival-desc" style={style}>
+		      {returnText}
+	      </p>,
+	      text: returnText
+      };
     }
 
 		return (<div>
@@ -121,7 +124,7 @@ class Calendar extends React.Component {
 					</p>
 					<p className="operate-btn flex-center-center">
 						<img src={leftIcon} onClick={() => this.changeMonth('prev')} alt=""/>
-						<span>{nowMonth}月</span>
+						<span style={{ display: 'block', width: '50px', textAlign: 'center' }}>{nowMonth}月</span>
 						<img src={rightIcon} onClick={() => this.changeMonth('next')} alt=""/>
 					</p>
 					<p className="operate-btn" onClick={() => this.changeMonth('today')}>
@@ -140,13 +143,15 @@ class Calendar extends React.Component {
 					{
 						monthDays.map((item, idx) => {
 							const isWeekDay = item.weekDay === 6 || item.weekDay === 0
+							const {dom, text} = getLunarText(item.date)
 							return <div className={`calendar-content-item 
 							                      ${item.notNow ? 'calendar-gray' : ''} 
 							                      ${today === item.date ? 'calendar-now' : ''}
                                     ${isWeekDay ? 'calendar-week-day' : ''}`}
+							            title={text}
                           key={idx}>
 								<p>{item.dayNumber}</p>
-                {getLunarText(item.date)}
+                {dom}
 							</div>
 						})
 					}
