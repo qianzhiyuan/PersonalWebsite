@@ -49,10 +49,46 @@ function quotationsList() {
   return quotationList.quotationList
 }
 
+function setStorageCache(key, value, jsonString = false) {
+  if (jsonString) {
+    window.localStorage.setItem(key, JSON.stringify(value))
+  } else {
+    window.localStorage.setItem(key, value)
+  }
+}
+
+function getStorageCache(key) {
+  try {
+    return window.localStorage.getItem(key) || ''
+  } catch (e) {
+    console.warn(`解析失败，原因为：${e}`)
+  }
+}
+
+function setSessionCache(key, value, jsonString = false) {
+  if (jsonString) {
+    window.sessionStorage.setItem(key, JSON.stringify(value))
+  } else {
+    window.sessionStorage.setItem(key, value)
+  }
+}
+
+function getSessionCache(key) {
+  try {
+    return window.sessionStorage.getItem(key) || ''
+  } catch (e) {
+    console.warn(`解析失败，原因为：${e}`)
+  }
+}
+
 export {
   getRandom,
   changeTimes,
   getDateTimeDataLunar,
   mGetDate,
-  quotationsList
+  quotationsList,
+  getStorageCache,
+  setStorageCache,
+  getSessionCache,
+  setSessionCache
 }

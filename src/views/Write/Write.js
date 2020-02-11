@@ -5,6 +5,7 @@ import 'codemirror/theme/monokai.css'
 import './Write.scss'
 import './css/Techo.scss'
 import MarkdownShowComponent from '../../components/MarkdownShowComponent/MarkdownShowComponent';
+import {getSessionCache, setSessionCache} from "../../assets/js/common";
 const Editor = require('./editor')
 
 const initialSource = `
@@ -53,33 +54,44 @@ class Write extends React.Component {
 	constructor(props) {
 		super(props)
 
-		this.handleControlsChange = this.handleControlsChange.bind(this)
-		this.handleMarkdownChange = this.handleMarkdownChange.bind(this)
 		this.state = {
-			markdownSrc: initialSource,
+			markdownSrc: (getSessionCache('cacheMarkDownCtx') && JSON.parse(getSessionCache('cacheMarkDownCtx'))) || initialSource,
 			htmlMode: 'raw'
 		}
+		this.handleMarkdownChange = this.handleMarkdownChange.bind(this)
+		this.submitContent = this.submitContent.bind(this)
 	}
 
 	handleMarkdownChange(evt) {
-		this.setState({markdownSrc: evt.target.value})
+		const value = evt.target.value
+		setSessionCache('cacheMarkDownCtx', value, true)
+		this.setState({markdownSrc: value})
 	}
 
-	handleControlsChange(mode) {
-		this.setState({htmlMode: mode})
+	// 提交内容
+	submitContent() {
+		const content = this.state.markdownSrc
+		console.log(content.trim());
 	}
 
 	render() {
 		return (
 			<div className="demo">
-				<div className="editor-pane">
-					<Editor value={this.state.markdownSrc} onChange={this.handleMarkdownChange} />
-				</div>
-
+				{/* 左边文档页面展示区域 */}
 				<div className="result-pane">
 					<MarkdownShowComponent
 						source={this.state.markdownSrc}
 					/>
+				</div>
+
+				{/* 右侧编辑器 */}
+				<div className="editor-pane">
+					<Editor value={this.state.markdownSrc} onChange={this.handleMarkdownChange} />
+				</div>
+
+				{/* 底部操作按钮区域 */}
+				<div className="operate-write-btn-area flex-center-center">
+					<p className="write-btn-div flex-center-center" onClick={this.submitContent}>提交</p>
 				</div>
 			</div>
 		)
