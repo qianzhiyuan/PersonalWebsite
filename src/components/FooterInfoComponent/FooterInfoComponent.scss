@@ -1,0 +1,23 @@
+.footer-info-container {
+  width: 100%;
+  color: #404040;
+  font-size: 12px;
+
+  .foot-split-block {
+    //margin-right: 2%;
+    margin-left: 20px;
+    height: 30px;
+    line-height: 30px;
+    &:last-child {
+      margin-right: 30px;
+    }
+  }
+
+  a {
+    color: #404040;
+
+    &:active {
+      color: #404040;
+    }
+  }
+}

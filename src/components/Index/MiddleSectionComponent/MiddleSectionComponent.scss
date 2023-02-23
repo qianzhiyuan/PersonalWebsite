@@ -1,0 +1,82 @@
+.scroll-section-list {
+  width: 100%;
+  min-height: 1000px;
+  border: 1px solid #e6e6e6;
+  border-radius: 36px;
+
+  li {
+    padding: 28px 26px;
+    min-height: 250px;
+    border-bottom: 1px solid #e6e6e6;
+
+    .padding-left-60 {
+      padding-left: 60px;
+    }
+
+    .list-title {
+      color: black;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .top-info {
+      //padding-left: 50px;
+      img {
+        float: left;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+
+    .scroll-list-content {
+      padding: 10px 0 0;
+      padding-left: 60px;
+
+      .content-img {
+        margin: 10px 0;
+        width: 100%;
+        box-shadow: 0 10px 15px #2416573d;
+        font-size: 0;
+
+        &:hover{
+          cursor: pointer;
+          transition: all .3s;
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .scroll-list-footer {
+      color: #7d92a2;
+      font-size: 14px;
+      height: 30px;
+
+      .system-block {
+        float: left;
+        margin-right: 20px;
+        min-width: 50px;
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .list-icon {
+        display: inline-block;
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+        font-size: 0;
+        vertical-align: middle;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
